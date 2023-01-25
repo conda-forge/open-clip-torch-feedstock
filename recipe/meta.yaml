@@ -1,5 +1,5 @@
 {% set name = "open-clip-torch" %}
-{% set version = "2.10.1" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -26,9 +26,6 @@ requirements:
     - ftfy
     - tqdm
     - huggingface_hub
-    - sentencepiece
-    - protobuf ==3.20.*
-    - timm
 
 test:
   imports:
