@@ -29,6 +29,7 @@ requirements:
     - sentencepiece
     - protobuf ==3.20.*
     - timm
+    - transformers
 
 test:
   imports:
