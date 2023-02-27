@@ -1,11 +1,11 @@
-About open-clip-torch
-=====================
+About open-clip-torch-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/open-clip-torch-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/mlfoundations/open_clip
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/open-clip-torch-feedstock/blob/main/LICENSE.txt)
 
 Summary: OpenCLIP
 
