@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -31,6 +31,10 @@ requirements:
     - timm
     - transformers
     - tokenizers >=0.11.1, !=0.11.3, <0.13
+    - fsspec
+    - webdataset >=0.2.5
+    - pandas
+    - braceexpand
 
 test:
   imports:
