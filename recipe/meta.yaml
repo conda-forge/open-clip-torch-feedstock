@@ -1,5 +1,5 @@
 {% set name = "open-clip-torch" %}
-{% set version = "2.17.2" %}
+{% set version = "2.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlfoundations/open_clip/archive/v{{ version }}.tar.gz
-  sha256: e3b442e527d4df89d7f213b3d1c739aa9887233e3fa92dafd6dc24ce159662e9
+  sha256: e41c245206c31a39fa60a742396d1b01439115d2dd4f54503305a10169f62aa3
 
 build:
   noarch: python
