@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/mlfoundations/open_clip/archive/v{{ version }}.tar.gz
-  sha256: d3dddbd2e7a90658487a77f4b1349be04e8cd62a28a6b100e4bfb960ab215dc8
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/open_clip_torch-{{ version }}.tar.gz
+  sha256: 7974ab756906a8ff3b7ad7cf9339a2927df0748ab001f36b0b367e22e4dada75
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
@@ -27,14 +27,8 @@ requirements:
     - tqdm
     - huggingface_hub
     - sentencepiece
-    - protobuf ==3.20.*
+    - protobuf
     - timm
-    - transformers
-    - tokenizers >=0.11.1, !=0.11.3, <0.13
-    - fsspec
-    - webdataset >=0.2.5
-    - pandas
-    - braceexpand
 
 test:
   imports:
