@@ -11,8 +11,8 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
@@ -27,14 +27,8 @@ requirements:
     - tqdm
     - huggingface_hub
     - sentencepiece
-    - protobuf ==3.20.*
+    - protobuf
     - timm
-    - transformers
-    - tokenizers >=0.11.1, !=0.11.3, <0.13
-    - fsspec
-    - webdataset >=0.2.5
-    - pandas
-    - braceexpand
 
 test:
   imports:
