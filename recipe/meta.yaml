@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/open_clip_torch-{{ version }}.tar.gz
-  sha256: 7974ab756906a8ff3b7ad7cf9339a2927df0748ab001f36b0b367e22e4dada75
+  url: https://github.com/mlfoundations/open_clip/archive/v{{ version }}.tar.gz
+  sha256: d3dddbd2e7a90658487a77f4b1349be04e8cd62a28a6b100e4bfb960ab215dc8
 
 build:
   noarch: python
