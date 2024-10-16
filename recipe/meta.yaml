@@ -1,5 +1,5 @@
 {% set name = "open-clip-torch" %}
-{% set version = "2.26.1" %}
+{% set version = "2.27.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlfoundations/open_clip/archive/v{{ version }}.tar.gz
-  sha256: cd6aa97aebde10987c20ac5fe2e11d7a3e4f30ac985848d9dc2778a596c7115e
+  sha256: b3e094da0f17a8e2a809e24e8967f97f1c73dd898df957880938ff3de978fe49
 
 build:
   noarch: python
@@ -21,6 +21,7 @@ requirements:
     - pdm
     - pdm-backend
   run:
+    - safetensors
     - python >=3.7
     - pytorch >=1.9.0
     - torchvision
