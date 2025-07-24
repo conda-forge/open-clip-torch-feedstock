@@ -1,5 +1,5 @@
 {% set name = "open-clip-torch" %}
-{% set version = "2.32.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlfoundations/open_clip/archive/v{{ version }}.tar.gz
-  sha256: 6509bbafad7cd284639d922ee826a251c558b6307c506a012872e71423a7d53f
+  sha256: 4bb0794ef6d8bad8ea410d70a624fe472fc044da2603022f02ec5f8ec34a5f38
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
   run:
     - safetensors
     - python >={{ python_min }}
-    - pytorch >=1.9.0
+    - pytorch >=2.0
     - torchvision
     - regex
     - ftfy
@@ -31,7 +31,7 @@ requirements:
     - huggingface_hub
     - sentencepiece
     - protobuf
-    - timm
+    - timm >=1.0.17
 
 test:
   imports:
