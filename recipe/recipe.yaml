@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  name: open-clip-torch
+  version: "3.3.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/mlfoundations/open_clip/archive/v${{ version }}.tar.gz
+  sha256: 5b72b5ea0a5bb4581a95d75487983fa20ebcf18b60261cc126e127f1eb1abffa
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - pdm
+    - pdm-backend
+  run:
+    - safetensors
+    - python >=${{ python_min }}
+    - pytorch >=2.0
+    - torchvision
+    - regex
+    - ftfy
+    - tqdm
+    - huggingface_hub
+    - sentencepiece
+    - protobuf
+    - timm >=1.0.17
+
+tests:
+  - python:
+      imports:
+        - open_clip
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: OpenCLIP
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/mlfoundations/open_clip
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
