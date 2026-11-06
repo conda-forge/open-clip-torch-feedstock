@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: open-clip-torch
-  version: "3.3.0"
+  version: 4.2.1
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/mlfoundations/open_clip/archive/v${{ version }}.tar.gz
-  sha256: 5b72b5ea0a5bb4581a95d75487983fa20ebcf18b60261cc126e127f1eb1abffa
+  sha256: 9baab0fe5aa54fb805b40640538e06d80a64a30c7b915c9b1a4ef3387e30b725
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -26,16 +26,14 @@ requirements:
   run:
     - safetensors
     - python >=${{ python_min }}
-    - pytorch >=2.0
+    - pytorch >=2.6
     - torchvision
     - regex
     - ftfy
     - tqdm
     - huggingface_hub
-    - sentencepiece
-    - protobuf
-    - timm >=1.0.17
-
+    - timm >=1.0.30
+    - tiktoken
 tests:
   - python:
       imports:
@@ -43,7 +41,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: OpenCLIP
