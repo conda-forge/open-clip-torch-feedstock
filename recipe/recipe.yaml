@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: open-clip-torch
-  version: 4.2.1
+  version: "4.2.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/mlfoundations/open_clip/archive/v${{ version }}.tar.gz
-  sha256: 9baab0fe5aa54fb805b40640538e06d80a64a30c7b915c9b1a4ef3387e30b725
+  sha256: 7852a3d6e4d4d54593f56d38c66ea09570b0d25f3a43f811ab9addaa00405832
 
 build:
   number: 0
